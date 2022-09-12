@@ -2,6 +2,14 @@
 A small project (documentation of sorts) to demonstrate the usage of ONVIF protocol with TouchDesigner on Windows10.<br>
 The document assumes that you are smarter than I am; some basic knowledge on TouchDesigner is needed.<br>
 
+# Index
+* [Requirements](#requirements)
+* [Initial Steps](#initial-steps)
+	* [Find TouchDesigner's python version](#find-touchdesigners-python-version)
+	* [Create a python environment using Conda](#create-a-python-environment-using-conda)
+	* [TouchDesigner Setup](#touchdesigner-setup)
+	* [DeskCamera Setup](#deskcamera-setup)
+
 # Requirements
 * [TouchDesigner](https://derivative.ca/download) `v2022.28040` or newer
 * [Anaconda3](https://www.anaconda.com/products/distribution) `conda 4.12.0` or newer
@@ -47,22 +55,22 @@ pip install onvif_zeep
 7. Check whether onvif_zeep is installed using `conda list`.
 Installing onvif_zeep will install following additional packages:
 ```
-	# Name				Version		Build		Channel
-	attrs				22.1.0		pypi_0		pypi
-	cached-property		1.5.2		pypi_0		pypi
-	charset-normalizer	2.1.1		pypi_0		pypi
-	idna				3.3			pypi_0		pypi
-	isodate				0.6.1		pypi_0		pypi
-	lxml				4.9.1		pypi_0		pypi
-	onvif-zeep			0.2.12		pypi_0		pypi
-	platformdirs		2.5.2		pypi_0		pypi
-	pytz				2022.2.1	pypi_0		pypi
-	requests			2.28.1		pypi_0		pypi
-	requests-file		1.5.1		pypi_0		pypi
-	requests-toolbelt	0.9.1		pypi_0		pypi
-	six					1.16.0		pypi_0		pypi
-	urllib3				1.26.12		pypi_0		pypi
-	zeep				4.1.0		pypi_0		pypi
+# Name               Version    Build       Channel
+attrs                22.1.0     pypi_0      pypi
+cached-property      1.5.2      pypi_0      pypi
+charset-normalizer   2.1.1      pypi_0      pypi
+idna                 3.3        pypi_0      pypi
+isodate              0.6.1      pypi_0      pypi
+lxml                 4.9.1      pypi_0      pypi
+onvif-zeep           0.2.12     pypi_0      pypi
+platformdirs         2.5.2      pypi_0      pypi
+pytz                 2022.2.1   pypi_0      pypi
+requests             2.28.1     pypi_0      pypi
+requests-file        1.5.1      pypi_0      pypi
+requests-toolbelt    0.9.1      pypi_0      pypi
+six                  1.16.0     pypi_0      pypi
+urllib3              1.26.12    pypi_0      pypi
+zeep                 4.1.0      pypi_0      pypi
 ```
 
 ## TouchDesigner Setup
