@@ -18,7 +18,8 @@ The document assumes that you are smarter than I am; some basic knowledge on Tou
 	[DeskCamera](https://www.deskcamera.com/download/#:~:text=Download%20DeskCamera%205.2.6%20%E2%80%93%20(June%2026%2C%202022)%20Windows%C2%A0x64%C2%A0installer) `v5.2.6` or newer ( *for testing purposes* )
 
 # Initial Steps
-## Find TouchDesigner's python version
+## Dealing with python stuff
+### Find TouchDesigner's python version
 There are two ways to find python version installed in TouchDesinger.
 1. Open TextPort as shown in the gif below.<br>
 The version is usually displayed at the beginning.
@@ -30,7 +31,7 @@ print(sys.version)
 	<img src="rsc/0_python_version.gif" width=75%>
 </p>
 
-## Create a python environment using Conda
+### Anaconda Setup
 1. Open `Anaconda Prompt (Anaconda3)` from Windows search bar.
 2. List all the python environments:
 ```python
@@ -73,6 +74,35 @@ urllib3              1.26.12    pypi_0      pypi
 zeep                 4.1.0      pypi_0      pypi
 ```
 
+## DeskCamera Setup
+Skip to [PTZ Camera Setup](#ptz-camera-setup), if you have an ONVIF PTZ camera.<br>
+If you want to test whether TouchDesigner works with ONVIF in the first place, you could use these steps.
+
+Once the DeskCamera application is installed and the not-so-friendly process of licensing is complete, the application should look something like this:<br>
+<p align="center">
+	<img src="rsc/1_DeskCamera.png" width=50% height=50%>
+</p>
+
+The key elements here are:<br>
+```
+IP Address
+Port
+Username
+Password
+```
+<p align="center">
+	<img src="rsc/2_DeskCamera_Masked.png" width=50% height=50%>
+</p>
+
+You could choose to run it on a preferred network interface by changing the IP Address option.<br>
+In the setup for this documentation, the values are as below:
+```
+IP Address : 169.254.199.230
+Port       : 8090
+Username   : admin
+Password   : password
+```
+
 ## TouchDesigner Setup
 1. Add `Execute DAT` and add the script from [`1_setup_python_variables.py`](/rsc/1_setup_python_variables.py).
 2. Change `username`'s value in line-12 to the username on your PC.
@@ -80,7 +110,10 @@ zeep                 4.1.0      pypi_0      pypi
 4. In the `Parameter` window of this `Execute DAT`, ensure that `Start` is toggled `On`.<br>
 This helps to run this script once as soon as the project is launched from the next instance.<br>
 However, we need to use it also in the current instance.<br>
-To do this, click on `Pulse`.
+To do this, click on `Pulse`, next to `Start`.
 5. Create a `Text DAT` and add the script from [`2_python_onvif.py`](/rsc/2_python_onvif.py)
+6. Right-click on `Text DAT` and select `Run`.
 
-## DeskCamera Setup
+This should then show the name of the PC on the output.
+
+## PTZ Camera Setup
